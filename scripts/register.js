@@ -1,4 +1,5 @@
 
+
 let pet1 = {
     name: "Bear",
     age:2,
@@ -38,3 +39,17 @@ function getPetNames(){
 }
 
 getPetNames();
+
+
+
+//getting input from HTML
+
+
+
+//constructor
+
+
+//register function
+
+
+

@@ -1,5 +1,5 @@
 
-
+/*
 console.log("Welcome to FSDI 104");
 
 //global variable
@@ -66,7 +66,7 @@ for(let i=0; i<names.length; i++){
         key3:value3
         }
  */
-
+/*
         let person = {
             name:"Mike",
             lastName:"Scott",
@@ -122,6 +122,6 @@ function getStudentsNames(){
 
 getStudentsNames();
 
-
+*/
 
 
