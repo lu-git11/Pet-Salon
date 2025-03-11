@@ -23,35 +23,66 @@ let inputAge = document.getElementById("txtAge");
 let inputGender = document.getElementById("txtGender");
 let inputBreed = document.getElementById("txtBreed");
 let inputService = document.getElementById("txtService");
-let inputType = document.getElementById("txtType");
 
 //constructor
-function Pet(name,age,gender,breed,service,type){
+function Pet(name,age,gender,breed,service){
     this.name=name;
     this.age=age;
     this.gender=gender;
     this.breed=breed;
     this.service=service;
-    this.type=type;
 }
 
 //register function
 function register(){
-    let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value,inputType.value);
-    let list = document.getElementById("newPet");
-    for(let i=0;i<newPet;i++){
-        console.log(newPet[i].name);
-        list.innerHTML+=`<li> ${newPet[i].name}</li>`
-    }
- //   document.getElementById("label").textContent = ``;
+    //create obj
+    let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value);
+    
+//push obj to array
 
+    if(isValid(newPet)){
+        pets.push(newPet);
+        //clearing inputs
+        //disaply pets in browser
+        clearInputs();
+        displayRow();
+    }
     //push
-    pets.push(newPet);
     console.log(pets);
 }
 
-//function clearInputs(){
-//    document.getElementById("label").textContent = ``;
+//validate form
+function isValid(pet){
+    let validation = true;//boolean result
+    
+    if(pet.name == ""){
+        validation = false;
+        //alert("name cannot be empty")
+        inputName.classList.add("error");
+    }
+
+    if(pet.age == ""){
+        validation = false;
+        //alert("age cannot be empty")
+        inputAge.classList.add("error");
+    }
+    return validation;
+}
+function deletePet(petId){
+    console.log("deleting pet with Id: " + petId)
+    document.getElementById(petId).remove();
+    pets.splice(petId,1);
+    displayRow();
+    displayInfo();
+}
+
+function clearInputs(){
+    inputAge.value = "";
+    inputName.value = "";
+    inputGender.value = "";
+    inputBreed.value = "";
+    inputService.value ="";
+}
 
 
 //init function
@@ -62,10 +93,9 @@ function init(){
     let pet3 = new Pet("Juno",999,"Male","Moose");
 
     //push object to array
-pets.push(pet1,pet2,pet3);
-
-console.log(pets);
-
+    pets.push(pet1,pet2,pet3);
+    console.log(pets);
+    displayRow();
 }
 
 window.onload=init;//wait to render html
