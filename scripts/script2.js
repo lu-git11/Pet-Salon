@@ -23,20 +23,22 @@ let inputAge = document.getElementById("txtAge");
 let inputGender = document.getElementById("txtGender");
 let inputBreed = document.getElementById("txtBreed");
 let inputService = document.getElementById("txtService");
+let inputPay = document.getElementById("txtPay");
 
 //constructor
-function Pet(name,age,gender,breed,service){
+function Pet(name,age,gender,breed,service,pay){
     this.name=name;
     this.age=age;
     this.gender=gender;
     this.breed=breed;
     this.service=service;
+    this.pay=pay;
 }
 
 //register function
 function register(){
     //create obj
-    let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value);
+    let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value,inputPay.value);
     
 //push obj to array
 
@@ -81,16 +83,17 @@ function clearInputs(){
     inputName.value = "";
     inputGender.value = "";
     inputBreed.value = "";
-    inputService.value ="";
+    inputService.value = "";
+    inputPay.value = "";
 }
 
 
 //init function
 function init(){
     //three objects
-    let pet1 = new Pet("Scooby",99,"Male","Dane");
-    let pet2 = new Pet("Bear",9,"Female","Duck");
-    let pet3 = new Pet("Juno",999,"Male","Moose");
+    let pet1 = new Pet("Scooby",99,"Male","Dane","Grooming","cash");
+    let pet2 = new Pet("Bear",9,"Female","Duck","nail trimming","card");
+    let pet3 = new Pet("Juno",999,"Male","Moose","vaccination","gift");
 
     //push object to array
     pets.push(pet1,pet2,pet3);

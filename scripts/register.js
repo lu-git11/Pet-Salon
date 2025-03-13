@@ -4,14 +4,14 @@ let pet1 = {
     name: "Bear",
     age:2,
     gender: "male",
-    service: "bath",
+    service: "nail",
     breed: "husky"
 }
 let pet2 = {
     name: "Juno",
     age:3,
     gender: "female",
-    service: "bath",
+    service: "grooming",
     breed: "lab"
 }
 let pet3 = {

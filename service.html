@@ -12,10 +12,10 @@
     <header>
         <div class="header-container">
             <nav class="menu">
-                <a href="register.html">Home</a>
-                <a href="">About</a>
-                <a href="index1.html">Service</a>
-                <a href="">Contact</a>
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="service.html">Service</a>
+                <a href="contact.html">Contact</a>
             </nav>
             <div class="padding">
                 <h1>Pet Salon</h1>
@@ -28,40 +28,45 @@
             <div class="form-container row justify-items-center">
                 <div class="col">
                     <div class="mb-3">
-                        <label>Name:
-                            <input class="form-control" type="text" id="txtName">
-                        </label>
+                        <label>Name: </label>
+                            <input class="form-control" type="text" id="txtName">                      
                     </div>
                     <div class="mb-3">
-                        <label>Age:
-                            <input class="form-control" type="number" id="txtAge">
-                        </label>
+                        <label>Age:</label>
+                            <input class="form-control" type="number" id="txtAge">                        
                     </div>
                     <div class="mb-3">
-                        <label>Gender:
-                            <select class="form-control" name="gender" id="txtGender">
+                        <label>Gender: </label>
+                            <select class="form-select" name="gender" id="txtGender">
                                 <option value="" disabled selected>Select one</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
-                            </select>
-                        </label>
+                            </select>                       
                     </div>
+                    
                 </div>
                 <div class="col">
                     <div class="mb-3">
-                        <label>Breed:
-                            <input class="form-control" type="text" id="txtBreed">
-                        </label>
+                        <label>Breed: </label>
+                            <input class="form-control" type="text" id="txtBreed">                     
                     </div>
                     <div class="mb-3">
-                        <label>Service:
-                            <select class="form-control" name="service" id="txtService">
+                        <label>Service:</label>
+                            <select class="form-select" name="service" id="txtService">
                                 <option value="" disabled selected>Select one</option>
                                 <option value="Grooming">Grooming</option>
                                 <option value="Vaccination">Vaccination</option>
                                 <option value="Nail trimming">Nail trimming</option>
-                            </select>    
-                        </label>
+                            </select>                           
+                    </div>
+                    <div class="mb-3">
+                        <label>Payment Method: </label>
+                            <select class="form-select" name="pay" id="txtPay">
+                                <option value="" disabled selected>Select one</option>
+                                <option value="Cash">Cash</option>
+                                <option value="Credit">Credit Card</option>
+                                <option value="Gift">Gift Card</option>
+                            </select>                       
                     </div>
                 </div>
             </div>
@@ -70,9 +75,24 @@
             <h2>register pets</h2>
                 <p>Total: <span id="total">0</span></p>
                 <p>Grooming: <span id="gTotal">0</span></p>
-                    <div id="pets" style="margin-bottom: 20px;"></div>  
+                    
                 
-            
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Age</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Breed</th>
+                                <th scope="col">Service</th>
+                                <th scope="col">Payment</th>                   
+                                <th scope="col">Actions</th>                   
+                            </tr>
+                        </thead>
+                        <tbody id="pets">
+                        </tbody>
+                    </table>
     </main>
 <footer class="footer">
     <div class="footer-container">
